@@ -315,7 +315,7 @@ nav {
 
 #features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 16px;
 }
 
@@ -691,9 +691,23 @@ main, nav, section, header, footer {
   border: 1px solid #555;
   border-radius: 2px;
   padding: 12px;
+  width: 437px;
+  height: 200px;
 }
 
-.spell-card input,
+.spell-card input {
+  font-weight: normal;
+  width: 100%;
+  background: #1a1a1a;
+  border: 1px solid #444;
+  border-radius: 2px;
+  color: #fff;
+  box-sizing: border-box;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  padding: 6px;
+}
+
 .spell-card textarea {
   font-weight: normal;
   width: 100%;
@@ -705,6 +719,7 @@ main, nav, section, header, footer {
   font-size: 1rem;
   margin-bottom: 8px;
   padding: 6px;
+  height: 150px;
 }
 
 .delete-spell-btn {
