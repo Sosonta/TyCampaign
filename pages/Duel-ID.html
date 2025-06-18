@@ -1,0 +1,302 @@
+<div id="auth-container">
+  <div id="auth-wrapper">
+    <div id="login-form" class="auth-box">
+      <h2>Login</h2>
+      <input type="email" id="login-email" placeholder="Email" />
+      <input type="password" id="login-password" placeholder="Password" />
+      <button id="login-btn">Login</button>
+    </div>
+
+    <div id="register-form" class="auth-box">
+      <h2>Register</h2>
+      <input type="text" id="register-username" placeholder="Username" />
+      <input type="email" id="register-email" placeholder="Email" />
+      <input type="password" id="register-password" placeholder="Password" />
+      <button id="register-btn">Register</button>
+    </div>
+  </div>
+
+  <div id="logout-section" style="display: none;">
+    <button id="logout-btn">Log Out</button>
+  </div>
+
+  <div id="duel-id-entry" style="display: none;">
+
+    <div id="duelist-card">
+      <div id="left-column">
+        <img id="profile-image" src="ui-images/default-profile.png" alt="Profile Image" title="Right click to upload a new image">
+        <input type="file" id="upload-image" accept="image/*" style="display:none;" />
+
+        <div id="hp-bar"><div id="hp-fill"></div></div>
+
+        <div id="hp-readout">
+          <label for="current-hp">HP:</label>
+          <input type="number" id="current-hp" value="10" min="0" />
+          /
+<input type="number" id="max-hp" min="1" value="30" />
+        </div>
+
+        <div id="extras-container">
+          <label for="inspiration">Insp:</label>
+          <input id="inspiration" type="number" min="0" max="9" />
+
+          <label for="proficiency">Prof:</label>
+          <input id="proficiency" type="number" min="0" max="9" />
+        </div>
+      </div>
+
+      <div id="right-column">
+        <div id="info-section">
+          <label>Name:
+            <input type="text" id="duelist-name" placeholder="Character Name" />
+          </label>
+          <label>Level:
+            <input type="number" id="duelist-level" value="1" min="1" />
+          </label>
+          <label>Class:
+            <input type="text" id="duelist-class" placeholder="Enter class" />
+          </label>
+        </div>
+
+        <div id="attributes-section">
+  <!-- Example box; repeat 6 times with different attribute names and skills -->
+  <div class="attribute-box" data-attr="Strength">
+    <div class="attribute-header">
+      <span class="attribute-title">Strength</span>
+      <input class="attr-score" type="number" min="1" max="20" value="10" />
+      <span class="attr-mod">+0</span>
+    </div>
+  <div class="skills">
+    <label><input type="checkbox" class="skill-checkbox" data-skill="Saving Throw" /> Saving Throw</label>
+    <label><input type="checkbox" class="skill-checkbox" data-skill="Athletics" /> Athletics</label>
+  </div>
+</div>
+  <div class="attribute-box" data-attr="Dexterity">
+    <div class="attribute-header">
+      <span class="attribute-title">Dexterity</span>
+      <input class="attr-score" type="number" min="1" max="20" value="10" />
+      <span class="attr-mod">+0</span>
+    </div>
+  <div class="skills">
+    <label><input type="checkbox" class="skill-checkbox" data-skill="Saving Throw" /> Saving Throw</label>
+    <label><input type="checkbox" class="skill-checkbox" data-skill="Acrobatics" /> Acrobatics</label>
+    <label><input type="checkbox" class="skill-checkbox" data-skill="Sleight of Hand" /> Sleight of Hand</label>
+    <label><input type="checkbox" class="skill-checkbox" data-skill="Stealth" /> Stealth</label>
+  </div>
+</div>
+  <div class="attribute-box" data-attr="Constitution">
+    <div class="attribute-header">
+      <span class="attribute-title">Constitution</span>
+      <input class="attr-score" type="number" min="1" max="20" value="10" />
+      <span class="attr-mod">+0</span>
+    </div>
+  <div class="skills">
+    <label><input type="checkbox" class="skill-checkbox" data-skill="Saving Throw" /> Saving Throw</label>
+    <label><input type="checkbox" class="skill-checkbox" data-skill="Power" /> Power</label>
+  </div>
+</div>
+  <div class="attribute-box" data-attr="Intelligence">
+    <div class="attribute-header">
+      <span class="attribute-title">Intelligence</span>
+      <input class="attr-score" type="number" min="1" max="20" value="10" />
+      <span class="attr-mod">+0</span>
+    </div>
+  <div class="skills">
+    <label><input type="checkbox" class="skill-checkbox" data-skill="Saving Throw" /> Saving Throw</label>
+    <label><input type="checkbox" class="skill-checkbox" data-skill="Technology" /> Technology</label>
+    <label><input type="checkbox" class="skill-checkbox" data-skill="History" /> History</label>
+    <label><input type="checkbox" class="skill-checkbox" data-skill="Investigation" /> Investigation</label>
+    <label><input type="checkbox" class="skill-checkbox" data-skill="Nature" /> Nature</label>
+    <label><input type="checkbox" class="skill-checkbox" data-skill="Religion" /> Religion</label>
+  </div>
+</div>
+  <div class="attribute-box" data-attr="Wisdom">
+    <div class="attribute-header">
+      <span class="attribute-title">Wisdom</span>
+      <input class="attr-score" type="number" min="1" max="20" value="10" />
+      <span class="attr-mod">+0</span>
+    </div>
+  <div class="skills">
+    <label><input type="checkbox" class="skill-checkbox" data-skill="Saving Throw" /> Saving Throw</label>
+    <label><input type="checkbox" class="skill-checkbox" data-skill="Poke-Handling" /> Animal Handling</label>
+    <label><input type="checkbox" class="skill-checkbox" data-skill="Insight" /> Insight</label>
+    <label><input type="checkbox" class="skill-checkbox" data-skill="Medicine" /> Medicine</label>
+    <label><input type="checkbox" class="skill-checkbox" data-skill="Perception" /> Perception</label>
+    <label><input type="checkbox" class="skill-checkbox" data-skill="Survival" /> Survival</label>
+  </div>
+</div>
+  <div class="attribute-box" data-attr="Charisma">
+    <div class="attribute-header">
+      <span class="attribute-title">Charisma</span>
+      <input class="attr-score" type="number" min="1" max="20" value="10" />
+      <span class="attr-mod">+0</span>
+    </div>
+  <div class="skills">
+    <label><input type="checkbox" class="skill-checkbox" data-skill="Saving Throw" /> Saving Throw</label>
+    <label><input type="checkbox" class="skill-checkbox" data-skill="Deception" /> Deception</label>
+    <label><input type="checkbox" class="skill-checkbox" data-skill="Intimidation" /> Intimidation</label>
+    <label><input type="checkbox" class="skill-checkbox" data-skill="Performance" /> Performance</label>
+    <label><input type="checkbox" class="skill-checkbox" data-skill="Persuasion"/> Persuasion</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="features-section">
+      <h2>Features</h2>
+      <div id="features-grid"></div>
+      <button id="add-feature-btn">Add Feature</button>
+    </div>
+  </div>
+
+  <div id="inventory-section" style="display: none;">
+    <div id="inventory-header">
+      <h2>Inventory</h2>
+      <label id="duel-label">
+        Gold: <input type="number" id="duel-credits" min="0" value="0" />
+      </label>
+    </div>
+    <div id="inventory-columns">
+      <div class="inventory-column" id="inventory-grid-0">
+        <button class="add-item-btn" data-column="0">Add Item</button>
+      </div>
+      <div class="inventory-column" id="inventory-grid-1">
+        <button class="add-item-btn" data-column="1">Add Item</button>
+      </div>
+      <div class="inventory-column" id="inventory-grid-2">
+        <button class="add-item-btn" data-column="2">Add Item</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="spells-section" style="display: none;">
+<div id="spells-section">
+  <h2>Spells</h2>
+  <div id="spell-levels-container">
+
+    <div class="spell-level-block" data-level="0">
+      <h3>Cantrips</h3>
+      <label>Spell Slots:
+        <input type="number" class="spell-slots" data-level="0" min="0" value="0" />
+      </label>
+      <label>Max Spell Slots:
+        <input type="number" class="spell-slots-max" data-level="0" min="0" value="0" />
+      </label>
+      <button class="add-spell-btn" data-level="0">Add Spell</button>
+      <div class="spells-grid" data-level="0"></div>
+    </div>
+
+    <!-- Levels 1 to 9 -->
+    <div class="spell-level-block" data-level="1">
+      <h3>1st Level</h3>
+      <label>Spell Slots:
+        <input type="number" class="spell-slots" data-level="1" min="0" value="0" />
+      </label>
+      <label>Max Spell Slots:
+        <input type="number" class="spell-slots-max" data-level="1" min="0" value="0" />
+      </label>
+      <button class="add-spell-btn" data-level="1">Add Spell</button>
+      <div class="spells-grid" data-level="1"></div>
+    </div>
+
+    <div class="spell-level-block" data-level="2">
+      <h3>2nd Level</h3>
+      <label>Spell Slots:
+        <input type="number" class="spell-slots" data-level="2" min="0" value="0" />
+      </label>
+      <label>Max Spell Slots:
+        <input type="number" class="spell-slots-max" data-level="2" min="0" value="0" />
+      </label>
+      <button class="add-spell-btn" data-level="2">Add Spell</button>
+      <div class="spells-grid" data-level="2"></div>
+    </div>
+
+    <div class="spell-level-block" data-level="3">
+      <h3>3rd Level</h3>
+      <label>Spell Slots:
+        <input type="number" class="spell-slots" data-level="3" min="0" value="0" />
+      </label>
+      <label>Max Spell Slots:
+        <input type="number" class="spell-slots-max" data-level="3" min="0" value="0" />
+      </label>
+      <button class="add-spell-btn" data-level="3">Add Spell</button>
+      <div class="spells-grid" data-level="3"></div>
+    </div>
+
+    <div class="spell-level-block" data-level="4">
+      <h3>4th Level</h3>
+      <label>Spell Slots:
+        <input type="number" class="spell-slots" data-level="4" min="0" value="0" />
+      </label>
+      <label>Max Spell Slots:
+        <input type="number" class="spell-slots-max" data-level="4" min="0" value="0" />
+      </label>
+      <button class="add-spell-btn" data-level="4">Add Spell</button>
+      <div class="spells-grid" data-level="4"></div>
+    </div>
+
+    <div class="spell-level-block" data-level="5">
+      <h3>5th Level</h3>
+      <label>Spell Slots:
+        <input type="number" class="spell-slots" data-level="5" min="0" value="0" />
+      </label>
+      <label>Max Spell Slots:
+        <input type="number" class="spell-slots-max" data-level="5" min="0" value="0" />
+      </label>
+      <button class="add-spell-btn" data-level="5">Add Spell</button>
+      <div class="spells-grid" data-level="5"></div>
+    </div>
+
+    <div class="spell-level-block" data-level="6">
+      <h3>6th Level</h3>
+      <label>Spell Slots:
+        <input type="number" class="spell-slots" data-level="6" min="0" value="0" />
+      </label>
+      <label>Max Spell Slots:
+        <input type="number" class="spell-slots-max" data-level="6" min="0" value="0" />
+      </label>
+      <button class="add-spell-btn" data-level="6">Add Spell</button>
+      <div class="spells-grid" data-level="6"></div>
+    </div>
+
+    <div class="spell-level-block" data-level="7">
+      <h3>7th Level</h3>
+      <label>Spell Slots:
+        <input type="number" class="spell-slots" data-level="7" min="0" value="0" />
+      </label>
+      <label>Max Spell Slots:
+        <input type="number" class="spell-slots-max" data-level="7" min="0" value="0" />
+      </label>
+      <button class="add-spell-btn" data-level="7">Add Spell</button>
+      <div class="spells-grid" data-level="7"></div>
+    </div>
+
+    <div class="spell-level-block" data-level="8">
+      <h3>8th Level</h3>
+      <label>Spell Slots:
+        <input type="number" class="spell-slots" data-level="8" min="0" value="0" />
+      </label>
+      <label>Max Spell Slots:
+        <input type="number" class="spell-slots-max" data-level="8" min="0" value="0" />
+      </label>
+      <button class="add-spell-btn" data-level="8">Add Spell</button>
+      <div class="spells-grid" data-level="8"></div>
+    </div>
+
+    <div class="spell-level-block" data-level="9">
+      <h3>9th Level</h3>
+      <label>Spell Slots:
+        <input type="number" class="spell-slots" data-level="9" min="0" value="0" />
+      </label>
+      <label>Max Spell Slots:
+        <input type="number" class="spell-slots-max" data-level="9" min="0" value="0" />
+      </label>
+      <button class="add-spell-btn" data-level="9">Add Spell</button>
+      <div class="spells-grid" data-level="9"></div>
+    </div>
+
+  </div>
+</div>
+</div>
